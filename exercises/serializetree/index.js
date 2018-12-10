@@ -21,12 +21,20 @@ function stringToNode(nodeAsString) {
 }
 
 function deserialize(nodeAsString) {
-  const arrayOfNodes = nodeAsString.split(",");
-  const tree = stringToNode(arrayOfNodes);
-  return tree;
+  if (typeof nodeAsString === "string") {
+    const arrayOfNodes = nodeAsString.split(",");
+    const tree = stringToNode(arrayOfNodes);
+    return tree;
+  }
+  return "";
 }
 
 const node = new Node('root', new Node('left', new Node('left.left')), new Node('right'));
 console.log(deserialize(serialize(node)).left.left.val);
+
+const node2 = new Node('1', new Node('2', new Node('4', new Node('6')), new Node('5')), new Node('3'));
+console.log(deserialize(serialize(node2)));
+console.log(deserialize(serialize(node2)).left.left.left);
+console.log(serialize(node2));
 
 module.exports = {serialize, deserialize};
