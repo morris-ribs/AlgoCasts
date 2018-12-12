@@ -32,36 +32,4 @@ function messagedecoder(message) {
     return count(message);
 }
 
-console.log(messagedecoder("011")); // expected 0
-console.log(messagedecoder("602")); // expected 0
-console.log(messagedecoder("1602")); // expected 0
-console.log(messagedecoder("1111111602")); // expected 0
-console.log(messagedecoder("10")); // expected 1
-console.log(messagedecoder("20")); // expected 1
-console.log(messagedecoder("201")); // expected 1
-console.log(messagedecoder("106")); // expected 1
-console.log(messagedecoder("2010")); // expected 1
-console.log(messagedecoder("63945")); // expected 1
-console.log(messagedecoder("639451")); // expected 1
-console.log(messagedecoder("16945")); // expected 2
-console.log(messagedecoder("61945")); // expected 2
-console.log(messagedecoder("162945")); // expected 2
-console.log(messagedecoder("111")); // expected 3
-console.log(messagedecoder("222")); // expected 3
-console.log(messagedecoder("161945")); // expected 4
-console.log(messagedecoder("261945")); // expected 4
-console.log(messagedecoder("1111")); // expected 5
-console.log(messagedecoder("2222")); // expected 5
-console.log(messagedecoder("1621945")); // expected 6
-
-// expected console
-// 1
-// 2
-// 2
-// 2
-// 3
-// 4
-// 4
-// 6
-
 module.exports = messagedecoder;
