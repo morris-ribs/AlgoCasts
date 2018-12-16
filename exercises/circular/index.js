@@ -17,7 +17,6 @@ const Node = L.Node;
 const List = L.LinkedList;
 
 function circular(list) {
-    const nodeList = {};
     let slow = list.getFirst();
     let fast = list.getFirst();
     while(fast.next && fast.next.next) {
