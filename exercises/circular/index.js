@@ -14,17 +14,18 @@
 
 const L = require('./linkedlist');
 const Node = L.Node;
-const LinkedList = L.LinkedList;
+const List = L.LinkedList;
 
 function circular(list) {
     const nodeList = {};
-    let node = list.getFirst();
-    while(node != null) {
-        if (!!nodeList[node.data]) {
+    let slow = list.getFirst();
+    let fast = list.getFirst();
+    while(fast.next && fast.next.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow === fast) {
             return true;
         }
-        nodeList[node.data] = true;
-        node = node.next;
     }
     return false;
 }
